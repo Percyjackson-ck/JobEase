@@ -1,0 +1,348 @@
+/* Modern Navbar Styles */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+.NavBar {
+  background: rgba(31, 41, 55, 0.95) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(75, 85, 99, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  padding: 15px 0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1050;
+}
+
+.NavBar.scrolled {
+  background: rgba(31, 41, 55, 0.98) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(75, 85, 99, 0.4);
+}
+
+/* Logo Styling */
+.Logo {
+  margin-right: auto;
+}
+
+.Brand {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 2.2rem !important;
+  color: #F9FAFB;
+  text-decoration: none !important;
+  background: linear-gradient(135deg, #F9FAFB 0%, #E5E7EB 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: all 0.3s ease;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.Brand:hover {
+  text-decoration: none !important;
+  transform: scale(1.05);
+  filter: drop-shadow(0 4px 8px rgba(37, 99, 235, 0.3));
+}
+
+.brandAccent {
+  color: #FACC15 !important;
+  -webkit-text-fill-color: #FACC15 !important;
+  margin-left: 2px;
+}
+
+.Brand::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(135deg, #2563EB, #FACC15);
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+.Brand:hover::after {
+  width: 100%;
+}
+
+/* Navbar Actions Container */
+.navbarActions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  order: 3;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto !important;
+}
+
+/* Navigation Links */
+.navLink {
+  color: #F9FAFB !important;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 10px 16px !important;
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  position: relative;
+  text-decoration: none !important;
+  font-family: "Inter", sans-serif;
+  white-space: nowrap;
+}
+
+.navLink:hover {
+  color: #FACC15 !important;
+  background: rgba(250, 204, 21, 0.1);
+  transform: translateY(-2px);
+  text-decoration: none !important;
+}
+
+.navLink:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(135deg, #FACC15, #F59E0B);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.navLink:hover:before,
+.navLink.active:before {
+  width: 80%;
+}
+
+.navLink.active {
+  color: #FACC15 !important;
+  background: rgba(250, 204, 21, 0.15);
+}
+
+/* Register Button */
+.registerBtn {
+  background: linear-gradient(135deg, #2563EB 0%, #3B82F6 100%) !important;
+  color: white !important;
+  font-weight: 600;
+  padding: 12px 24px !important;
+  border-radius: 12px;
+  text-decoration: none !important;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  margin-left: 15px;
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+  border: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+}
+
+.registerBtn:hover {
+  background: linear-gradient(135deg, #1D4ED8 0%, #2563EB 100%) !important;
+  color: white !important;
+  text-decoration: none !important;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.5);
+}
+
+/* Mobile Toggle Button */
+.navbarToggler {
+  border: none !important;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: rgba(250, 204, 21, 0.1);
+  transition: all 0.3s ease;
+  color: #FACC15;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbarToggler:focus {
+  box-shadow: 0 0 0 3px rgba(250, 204, 21, 0.2) !important;
+}
+
+.navbarToggler:hover {
+  background: rgba(250, 204, 21, 0.2);
+}
+
+/* Microphone Button */
+.microphoneWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.microphone {
+  font-size: 24px;
+  color: #FACC15;
+  cursor: pointer;
+  padding: 12px;
+  border-radius: 50%;
+  background: rgba(250, 204, 21, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.microphone:hover {
+  background: rgba(250, 204, 21, 0.2);
+  color: #F59E0B;
+  transform: scale(1.1);
+  border-color: rgba(250, 204, 21, 0.3);
+  box-shadow: 0 4px 15px rgba(250, 204, 21, 0.3);
+}
+
+.microphone:active {
+  transform: scale(1.05);
+  background: rgba(250, 204, 21, 0.3);
+}
+
+/* Language Selector in Navbar */
+.navbarActions .modern-language-selector {
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+  .NavBar {
+    padding: 12px 0;
+  }
+  
+  .Brand {
+    font-size: 1.8rem !important;
+  }
+  
+  .navbarActions {
+    order: 2;
+    margin-left: 15px;
+  }
+  
+  .navbar-collapse {
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(31, 41, 55, 0.98);
+    border-radius: 15px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(75, 85, 99, 0.3);
+  }
+  
+  .navLinks {
+    flex-direction: column;
+    align-items: stretch !important;
+    gap: 5px;
+    margin: 0 !important;
+  }
+  
+  .navLink {
+    text-align: center;
+    margin: 5px 0;
+    padding: 15px 20px !important;
+  }
+  
+  .registerBtn {
+    margin: 15px 0 5px 0 !important;
+    text-align: center;
+    display: block;
+  }
+  
+  .navbarActions .modern-language-selector {
+    display: none;
+  }
+  
+  .microphoneWrapper {
+    position: relative;
+  }
+  
+  .navbarToggler {
+    background: rgba(250, 204, 21, 0.1);
+    color: #FACC15;
+  }
+  
+  .navbarToggler:hover {
+    background: rgba(250, 204, 21, 0.2);
+  }
+}
+
+@media (max-width: 768px) {
+  .Brand {
+    font-size: 1.6rem !important;
+  }
+  
+  .microphone {
+    font-size: 20px;
+    padding: 10px;
+  }
+  
+  .navbarToggler {
+    padding: 6px 10px;
+    font-size: 18px;
+  }
+}
+
+/* Light Mode Support (Optional) */
+@media (prefers-color-scheme: light) {
+  /* Users who prefer light mode can have a slightly lighter version */
+  .NavBar {
+    background: rgba(31, 41, 55, 0.92) !important;
+  }
+  
+  .NavBar.scrolled {
+    background: rgba(31, 41, 55, 0.95) !important;
+  }
+}
+
+/* Animation for scroll effect */
+@keyframes navSlideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.NavBar {
+  animation: navSlideDown 0.5s ease-out;
+}
+
+/* Smooth transitions */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Fix Bootstrap overrides */
+.navbar-expand-lg .navbar-nav {
+  flex-direction: row;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.navbar-brand {
+  margin-right: 0;
+}
+
+.navbar-toggler:focus {
+  text-decoration: none;
+  outline: 0;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}

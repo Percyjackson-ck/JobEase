@@ -1,0 +1,322 @@
+/* Modern Form Styles - Enhanced Design System */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/* Card Title with Modern Gradient */
+.CardTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1F2937;
+  background: linear-gradient(135deg, #1F2937 0%, #374151 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-align: center;
+  border-bottom: 4px solid transparent;
+  background-image: linear-gradient(white, white), 
+                    linear-gradient(135deg, #2563EB, #FACC15);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  padding-bottom: 15px;
+  margin-bottom: 30px;
+  font-family: "Poppins", sans-serif;
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+.CardTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 4px;
+  width: 60px;
+  background: linear-gradient(135deg, #2563EB, #FACC15);
+  border-radius: 2px;
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0%, 100% { width: 60px; }
+  50% { width: 120px; }
+}
+
+/* Modern Input Fields */
+.Input {
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid #E5E7EB;
+  border-radius: 12px;
+  padding: 16px 20px;
+  font-size: 16px;
+  font-family: "Inter", sans-serif;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 100%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(10px);
+  margin-top: 20px;
+  position: relative;
+}
+
+.Input:focus {
+  outline: none;
+  border-color: #2563EB;
+  background: #FFFFFF;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1),
+              0 8px 25px rgba(37, 99, 235, 0.15);
+  transform: translateY(-2px);
+}
+
+.Input::placeholder {
+  color: #9CA3AF;
+  font-weight: 500;
+}
+
+/* Select Dropdown Modern Style */
+.Input[as="select"],
+select.Input {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 12px center;
+  background-repeat: no-repeat;
+  background-size: 16px;
+  padding-right: 48px;
+  cursor: pointer;
+}
+
+.Input[as="select"]:focus,
+select.Input:focus {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%232563EB' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+}
+
+/* Textarea Styling */
+.Input[as="textarea"],
+textarea.Input {
+  resize: vertical;
+  min-height: 120px;
+  line-height: 1.6;
+}
+
+/* Modern Button Design */
+.Button {
+  background: linear-gradient(135deg, #FACC15 0%, #F59E0B 100%);
+  border: none;
+  color: #1F2937;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 16px 32px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+  font-family: "Inter", sans-serif;
+  position: relative;
+  overflow: hidden;
+  margin-top: 30px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 140px;
+}
+
+.Button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.6s;
+}
+
+.Button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(245, 158, 11, 0.5);
+  background: linear-gradient(135deg, #F59E0B 0%, #FACC15 100%);
+}
+
+.Button:hover::before {
+  left: 100%;
+}
+
+.Button:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+}
+
+/* Error Message Styling */
+.ErrorMessage {
+  color: #EF4444;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 8px;
+  margin-left: 8px;
+  display: none;
+  font-family: "Inter", sans-serif;
+  background: rgba(239, 68, 68, 0.1);
+  padding: 8px 12px;
+  border-radius: 8px;
+  border-left: 4px solid #EF4444;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Rectangle Decorators */
+.RectangleEligibility,
+.RectangleBasicDetails,
+.RectangleJobDescription,
+.RectangleRounds {
+  height: 6px;
+  background: linear-gradient(135deg, #2563EB, #3B82F6);
+  border-radius: 3px;
+  margin-bottom: 25px;
+  position: relative;
+  overflow: hidden;
+}
+
+.RectangleEligibility {
+  width: 120px;
+}
+
+.RectangleBasicDetails {
+  width: 320px;
+}
+
+.RectangleJobDescription {
+  width: 220px;
+}
+
+.RectangleRounds {
+  width: 110px;
+}
+
+.RectangleEligibility::after,
+.RectangleBasicDetails::after,
+.RectangleJobDescription::after,
+.RectangleRounds::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+  animation: shine 2s infinite;
+}
+
+@keyframes shine {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+/* Form Group Styling */
+.form-group {
+  margin-bottom: 24px;
+  position: relative;
+}
+
+/* Label Enhancement */
+.form-label {
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 8px;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .CardTitle {
+    font-size: 2rem;
+    text-align: center;
+  }
+  
+  .Input {
+    padding: 14px 16px;
+    font-size: 16px; /* Prevent zoom on iOS */
+  }
+  
+  .Button {
+    width: 100%;
+    float: none;
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .RectangleBasicDetails {
+    width: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .CardTitle {
+    font-size: 1.8rem;
+  }
+  
+  .RectangleBasicDetails {
+    width: 100%;
+    max-width: 250px;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .Input {
+    background: rgba(31, 41, 55, 0.9);
+    border-color: #374151;
+    color: #F9FAFB;
+  }
+  
+  .Input:focus {
+    background: #1F2937;
+    border-color: #3B82F6;
+  }
+  
+  .Input::placeholder {
+    color: #6B7280;
+  }
+  
+  .CardTitle {
+    color: #F9FAFB;
+  }
+}
+
+/* Loading State */
+.Button.loading {
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.Button.loading::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  left: 50%;
+  margin-left: -10px;
+  margin-top: -10px;
+  border: 2px solid #1F2937;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

@@ -1,0 +1,337 @@
+/* Modern Footer Styles */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+.Jumbotron {
+  background: linear-gradient(135deg, #1F2937 0%, #111827 100%);
+  color: #F9FAFB;
+  margin-bottom: 0;
+  padding: 60px 0 40px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.Jumbotron::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="footerGrain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="0.5" fill="white" opacity="0.05"/><circle cx="75" cy="75" r="0.5" fill="white" opacity="0.05"/><circle cx="50" cy="10" r="0.3" fill="white" opacity="0.05"/></pattern></defs><rect width="100%" height="100%" fill="url(%23footerGrain)"/></svg>') repeat;
+  animation: float 30s infinite linear;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-100px); }
+}
+
+.Container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Logo Styling */
+.Logo {
+  margin-bottom: 30px;
+}
+
+.Logo span {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  background: linear-gradient(135deg, #F9FAFB 0%, #E5E7EB 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+}
+
+.Logo span::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(135deg, #2563EB, #FACC15);
+  border-radius: 2px;
+}
+
+/* Column Styling */
+.Column {
+  margin-bottom: 30px;
+}
+
+.Border {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: #FACC15;
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.Border::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(135deg, #FACC15, #F59E0B);
+  border-radius: 1px;
+}
+
+.Column p {
+  color: #D1D5DB;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  margin-bottom: 12px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  padding: 8px 0;
+  border-radius: 6px;
+}
+
+.Column p:hover {
+  color: #FACC15;
+  padding-left: 10px;
+  background: rgba(250, 204, 21, 0.1);
+}
+
+/* Contact Info Icons */
+.Column p svg {
+  margin-right: 10px;
+  color: #2563EB;
+  font-size: 16px;
+}
+
+/* Lines for separation */
+.line1, .line2 {
+  border: none;
+  height: 1px;
+  background: linear-gradient(135deg, transparent 0%, #374151 50%, transparent 100%);
+  margin: 40px 0;
+}
+
+.line2 {
+  display: none;
+}
+
+/* Top sections */
+.Top1 {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.Top2, .Top3 {
+  display: none;
+}
+
+/* Bottom section */
+.Bottom1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.Bottom1 p {
+  color: #9CA3AF;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.Bottom2 {
+  display: none;
+}
+
+/* Social Links */
+.SocialLinks {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+}
+
+.Shift {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  background: rgba(37, 99, 235, 0.1);
+  color: #2563EB;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 18px;
+  border: 2px solid transparent;
+}
+
+.Shift:hover {
+  background: linear-gradient(135deg, #2563EB, #3B82F6);
+  color: white;
+  text-decoration: none;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
+  border-color: rgba(37, 99, 235, 0.3);
+}
+
+.Shift:nth-child(2):hover {
+  background: linear-gradient(135deg, #E1306C, #F56040);
+  box-shadow: 0 8px 25px rgba(225, 48, 108, 0.4);
+}
+
+.Shift:nth-child(3):hover {
+  background: linear-gradient(135deg, #1DA1F2, #0D8BD9);
+  box-shadow: 0 8px 25px rgba(29, 161, 242, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+  .Top1 {
+    display: none;
+  }
+  
+  .Top2 {
+    display: flex;
+    margin-bottom: 30px;
+  }
+  
+  .Top3 {
+    display: block;
+  }
+  
+  .Bottom1 {
+    display: none;
+  }
+  
+  .Bottom2 {
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .Para {
+    text-align: center;
+    color: #9CA3AF;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+  }
+  
+  .SocialLinks {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .Jumbotron {
+    padding: 40px 0 30px 0;
+  }
+  
+  .Logo span {
+    font-size: 2rem;
+  }
+  
+  .Border {
+    font-size: 1.1rem;
+  }
+  
+  .Column p {
+    font-size: 13px;
+  }
+  
+  .line2 {
+    display: block;
+    margin: 20px 0;
+    border: none;
+    height: 1px;
+    background: rgba(55, 65, 81, 0.5);
+  }
+}
+
+@media (max-width: 576px) {
+  .Top2 {
+    flex-direction: column;
+  }
+  
+  .Top2 Col:last-child {
+    margin-top: 20px;
+  }
+  
+  .Top2 Col:last-child h5,
+  .Top2 Col:last-child p {
+    text-align: left !important;
+  }
+  
+  .Shift {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.Column {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.Column:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.Column:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.Column:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+/* Dark mode enhancements */
+@media (prefers-color-scheme: dark) {
+  .Jumbotron {
+    background: linear-gradient(135deg, #0F172A 0%, #020617 100%);
+  }
+  
+  .Column p {
+    color: #CBD5E1;
+  }
+  
+  .Column p:hover {
+    color: #FDE047;
+    background: rgba(253, 224, 71, 0.1);
+  }
+  
+  .Bottom1 p {
+    color: #64748B;
+  }
+}
+
+/* Accessibility improvements */
+.Shift:focus {
+  outline: 2px solid #FACC15;
+  outline-offset: 2px;
+}
+
+.Column p:focus {
+  outline: 2px solid #2563EB;
+  outline-offset: 2px;
+  border-radius: 4px;
+}

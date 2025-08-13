@@ -1,0 +1,384 @@
+/* Modern Procedure/Workflow Styles */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+.Jumbotron {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  padding: 80px 0;
+  margin-bottom: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.Jumbotron::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="workflowPattern" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%232563EB" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="%23FACC15" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="%232563EB" opacity="0.1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23workflowPattern)"/></svg>') repeat;
+  animation: float 25s infinite linear;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-100px); }
+}
+
+/* Section Heading */
+.Heading {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 60px;
+  color: #1F2937;
+  background: linear-gradient(135deg, #1F2937 0%, #374151 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+  z-index: 2;
+}
+
+.Heading::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 4px;
+  background: linear-gradient(135deg, #2563EB, #FACC15);
+  border-radius: 2px;
+}
+
+.About {
+  color: #FACC15;
+  background: linear-gradient(135deg, #FACC15, #F59E0B);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Step Cards Container */
+.Row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
+}
+
+/* Individual Step Cards */
+.Box {
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.Box:nth-child(1) { animation-delay: 0.1s; }
+.Box:nth-child(2) { animation-delay: 0.2s; }
+.Box:nth-child(3) { animation-delay: 0.3s; }
+.Box:nth-child(4) { animation-delay: 0.4s; }
+.Box:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Modern Card Styling */
+.Box .card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%) !important;
+  backdrop-filter: blur(20px) !important;
+  border: 2px solid rgba(37, 99, 235, 0.2) !important;
+  border-radius: 20px !important;
+  width: 240px !important;
+  height: 180px !important;
+  box-shadow: 0 20px 40px rgba(37, 99, 235, 0.1) !important;
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  padding: 25px !important;
+  cursor: pointer !important;
+}
+
+.Box:hover .card {
+  transform: translateY(-12px) scale(1.02) !important;
+  box-shadow: 0 35px 70px rgba(37, 99, 235, 0.2) !important;
+  border-color: rgba(37, 99, 235, 0.4) !important;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(248, 250, 252, 1) 100%) !important;
+}
+
+/* Card Image */
+.CardImage {
+  width: 50px !important;
+  height: 50px !important;
+  object-fit: contain !important;
+  margin-bottom: 12px !important;
+  transition: all 0.3s ease !important;
+  filter: drop-shadow(0 4px 8px rgba(37, 99, 235, 0.2)) !important;
+}
+
+.Box:hover .CardImage {
+  transform: scale(1.1) !important;
+  filter: drop-shadow(0 6px 12px rgba(37, 99, 235, 0.3)) !important;
+}
+
+/* Card Title */
+.CardTitle {
+  font-family: "Inter", sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 18px !important;
+  color: #111827 !important;
+  margin: 0 0 12px 0 !important;
+  line-height: 1.4 !important;
+  text-align: center !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+  padding: 0 16px !important;
+}
+
+/* Card Description */
+.CardDescription {
+  font-family: "Inter", sans-serif !important;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  color: #374151 !important;
+  margin: 0 !important;
+  line-height: 1.5 !important;
+  text-align: center !important;
+  opacity: 0.9 !important;
+  padding: 8px 16px !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+}
+
+.Box:hover .CardTitle {
+  color: #2563EB !important;
+  transform: translateY(-2px) !important;
+  text-shadow: 0 2px 6px rgba(37, 99, 235, 0.2) !important;
+}
+
+.Box:hover .CardDescription {
+  color: #1F2937 !important;
+  opacity: 1 !important;
+  transform: translateY(-2px) !important;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Step Numbers */
+.Box::before {
+  content: counter(step-counter);
+  counter-increment: step-counter;
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #2563EB, #1d4ed8);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 22px;
+  font-family: "Inter", sans-serif;
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.5);
+  z-index: 10;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border: 3px solid rgba(255, 255, 255, 0.9);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.Box:hover::before {
+  background: linear-gradient(135deg, #FACC15, #F59E0B);
+  color: #1F2937;
+  transform: translateX(-50%) scale(1.15);
+  box-shadow: 0 12px 35px rgba(250, 204, 21, 0.4);
+}
+
+/* Reset counter for each container */
+.Row {
+  counter-reset: step-counter;
+}
+
+/* Connection Lines Between Steps */
+.Box:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -30px;
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(135deg, #2563EB, #FACC15);
+  border-radius: 2px;
+  z-index: 1;
+  opacity: 0.4;
+  transition: all 0.3s ease;
+}
+
+.Box:hover::after {
+  opacity: 1;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .Box:not(:last-child)::after {
+    display: none;
+  }
+  
+  .Row {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .Jumbotron {
+    padding: 60px 0;
+  }
+  
+  .Heading {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+  }
+  
+  .Box .card {
+    width: 180px !important;
+    height: 140px !important;
+  }
+  
+  .CardImage {
+    width: 40px !important;
+    height: 40px !important;
+  }
+  
+  .CardTitle {
+    font-size: 14px !important;
+  }
+  
+  .CardDescription {
+    font-size: 11px !important;
+  }
+  
+  .Row {
+    gap: 15px;
+  }
+  
+  .Box::before {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+    top: -10px;
+    left: -10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .Heading {
+    font-size: 1.8rem;
+  }
+  
+  .Box .card {
+    width: 160px !important;
+    height: 120px !important;
+  }
+  
+  .CardImage {
+    width: 35px !important;
+    height: 35px !important;
+    margin-bottom: 8px !important;
+  }
+  
+  .CardTitle {
+    font-size: 13px !important;
+  }
+  
+  .CardDescription {
+    font-size: 10px !important;
+  }
+  
+  .Row {
+    flex-direction: column;
+    gap: 25px;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .Jumbotron {
+    background: linear-gradient(135deg, #1F2937 0%, #111827 100%);
+  }
+  
+  .Heading {
+    color: #F9FAFB;
+  }
+  
+  .Box .card {
+    background: rgba(31, 41, 55, 0.95) !important;
+    background-image: linear-gradient(rgba(31, 41, 55, 0.95), rgba(31, 41, 55, 0.95)), 
+                      linear-gradient(135deg, #3B82F6, #FBBF24) !important;
+  }
+  
+  .CardTitle {
+    color: #F9FAFB !important;
+  }
+  
+  .Box:hover .CardTitle {
+    color: #60A5FA !important;
+  }
+}
+
+/* Additional Animation Effects */
+.Box {
+  cursor: pointer;
+}
+
+.Box:active {
+  transform: scale(0.98);
+}
+
+/* Pulse animation for step numbers */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.Box::before {
+  animation: pulse 2s infinite;
+}
+
+.Box:hover::before {
+  animation: none;
+}
+
+/* Loading state */
+.Box.loading {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.Box.loading .CardImage {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

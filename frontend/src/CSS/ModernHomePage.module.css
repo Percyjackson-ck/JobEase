@@ -1,0 +1,486 @@
+/* Modern Homepage Sections Styles */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/* Banner Section */
+.banner {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grain)"/></svg>') repeat;
+  animation: float 20s infinite linear;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-100px); }
+}
+
+.bannerContent {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+}
+
+.bannerTitle {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: titleSlide 1s ease-out;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-100px); }
+}
+
+@keyframes titleSlide {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bannerSubtitle {
+  font-size: 1.5rem;
+  font-weight: 500;
+  opacity: 0.9;
+  margin-bottom: 2rem;
+  font-family: "Inter", sans-serif;
+  animation: subtitleSlide 1s ease-out 0.3s both;
+}
+
+@keyframes subtitleSlide {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 0.9;
+    transform: translateY(0);
+  }
+}
+
+/* Card Components */
+.modernCard {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.modernCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, #2563EB, #FACC15);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.modernCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+}
+
+.modernCard:hover::before {
+  transform: scaleX(1);
+}
+
+.cardTitle {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1F2937;
+  margin-bottom: 15px;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #1F2937 0%, #374151 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.cardDescription {
+  font-size: 1rem;
+  color: #6B7280;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-family: "Inter", sans-serif;
+}
+
+.cardIcon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #2563EB, #3B82F6);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.cardIcon:hover {
+  transform: rotate(10deg) scale(1.1);
+  background: linear-gradient(135deg, #FACC15, #F59E0B);
+}
+
+/* Section Headings */
+.sectionHeading {
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #1F2937 0%, #374151 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+}
+
+.sectionHeading::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(135deg, #2563EB, #FACC15);
+  border-radius: 2px;
+}
+
+/* Modern Button for sections - Cool Colors */
+.sectionButton {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.9) 0%, rgba(79, 70, 229, 0.9) 100%);
+  border: none;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 16px 32px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+  font-family: "Inter", sans-serif;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  display: inline-block;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.sectionButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s;
+}
+
+.sectionButton:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(139, 92, 246, 0.5);
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.98) 0%, rgba(67, 56, 202, 0.98) 100%);
+  color: white;
+  text-decoration: none;
+  border-color: rgba(255, 255, 255, 0.4);
+  font-weight: 700;
+}
+
+.sectionButton:hover::before {
+  left: 100%;
+}
+
+/* Grid layouts */
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 40px 0;
+  animation: gridFadeIn 1s ease-out;
+}
+
+@keyframes gridFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Job Category Cards - Cool Color Scheme */
+.categoryCard {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(248, 250, 252, 0.1) 100%);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 25px;
+  text-align: center;
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 0.8s ease-out both;
+}
+
+/* Add a subtle pulse animation to inactive cards when hovering over grid */
+.cardGrid:hover .categoryCard:not(:hover) {
+  opacity: 0.85;
+  transform: scale(0.98);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Add breathing animation for better visual appeal */
+@keyframes breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.005); }
+}
+
+.categoryCard {
+  animation: fadeInUp 0.8s ease-out both, breathe 4s ease-in-out infinite;
+}
+
+/* Staggered animation delays for each card */
+.categoryCard:nth-child(1) { animation-delay: 0.1s, 1s; }
+.categoryCard:nth-child(2) { animation-delay: 0.2s, 1.5s; }
+.categoryCard:nth-child(3) { animation-delay: 0.3s, 2s; }
+.categoryCard:nth-child(4) { animation-delay: 0.4s, 2.5s; }
+.categoryCard:nth-child(5) { animation-delay: 0.5s, 3s; }
+.categoryCard:nth-child(6) { animation-delay: 0.6s, 3.5s; }
+.categoryCard:nth-child(7) { animation-delay: 0.7s, 4s; }
+.categoryCard:nth-child(8) { animation-delay: 0.8s, 4.5s; }
+.categoryCard:nth-child(9) { animation-delay: 0.9s, 5s; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.categoryCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.3), rgba(118, 75, 162, 0.3));
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.categoryCard:hover::before {
+  opacity: 0.8;
+}
+
+.categoryCard:hover {
+  transform: translateY(-15px) scale(1.05);
+  box-shadow: 0 35px 70px rgba(0, 0, 0, 0.25);
+  border-color: rgba(255, 255, 255, 0.6);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, rgba(248, 250, 252, 0.2) 100%);
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.categoryIcon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.8), rgba(118, 75, 162, 0.8));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  z-index: 2;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.categoryCard:hover .categoryIcon {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.9), rgba(79, 70, 229, 0.9));
+  transform: scale(1.15) rotate(5deg);
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 10px 25px rgba(139, 92, 246, 0.4);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Smooth transitions for images inside category icons */
+.categoryIcon img {
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  filter: brightness(1) saturate(1);
+}
+
+.categoryCard:hover .categoryIcon img {
+  transform: scale(1.1);
+  filter: brightness(1.2) saturate(1.1);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.categoryTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin-bottom: 10px;
+  font-family: "Inter", sans-serif;
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.categoryCard:hover .categoryTitle {
+  color: #FFFFFF;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+  transform: scale(1.08) translateY(-2px);
+  font-weight: 700;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Enhanced visibility for buttons inside category cards on hover */
+.categoryCard:hover .sectionButton {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(241, 245, 249, 0.95) 100%);
+  color: #1F2937;
+  border-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  font-weight: 700;
+  transform: translateY(-2px) scale(1.02);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Smooth transitions for category description text */
+.categoryCard p {
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  opacity: 0.9;
+}
+
+.categoryCard:hover p {
+  opacity: 1;
+  transform: translateY(-1px);
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Button group smooth transitions */
+.categoryCard div[style*="display: flex"] {
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.categoryCard:hover div[style*="display: flex"] {
+  transform: translateY(-3px);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .bannerTitle {
+    font-size: 2.5rem;
+  }
+  
+  .bannerSubtitle {
+    font-size: 1.2rem;
+  }
+  
+  .sectionHeading {
+    font-size: 2.2rem;
+  }
+  
+  .modernCard {
+    padding: 20px;
+  }
+  
+  .cardGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .bannerTitle {
+    font-size: 2rem;
+  }
+  
+  .sectionHeading {
+    font-size: 1.8rem;
+  }
+  
+  .modernCard {
+    padding: 15px;
+    border-radius: 15px;
+  }
+  
+  .sectionButton {
+    width: 100%;
+    padding: 14px 24px;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .modernCard {
+    background: rgba(31, 41, 55, 0.9);
+    border-color: rgba(55, 65, 81, 0.3);
+  }
+  
+  .cardTitle {
+    color: #F9FAFB;
+  }
+  
+  .cardDescription {
+    color: #D1D5DB;
+  }
+  
+  .categoryCard {
+    background: linear-gradient(135deg, rgba(31, 41, 55, 0.9) 0%, rgba(17, 24, 39, 0.9) 100%);
+  }
+  
+  .categoryTitle {
+    color: #F9FAFB;
+  }
+}

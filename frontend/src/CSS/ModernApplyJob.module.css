@@ -1,0 +1,232 @@
+/* Modern ApplyJob Modal Styles */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+/* Backdrop overlay */
+.PopUpBox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+  }
+  to {
+    opacity: 1;
+    backdrop-filter: blur(8px);
+  }
+}
+
+/* Modal container */
+.Box {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 40px 50px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  max-width: 500px;
+  width: 90%;
+  margin: 20px;
+  transform: scale(0.9);
+  animation: modalSlideIn 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+  font-family: "Inter", sans-serif;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Close button */
+.CloseIcon {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #64748B;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(100, 116, 139, 0.1);
+  user-select: none;
+}
+
+.CloseIcon:hover {
+  color: #EF4444;
+  background: rgba(239, 68, 68, 0.1);
+  transform: rotate(90deg);
+}
+
+/* Modal text */
+.Box p {
+  font-size: 16px;
+  color: #374151;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  font-weight: 500;
+  text-align: center;
+}
+
+.Box p a {
+  color: #2563EB;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border-bottom: 2px solid transparent;
+}
+
+.Box p a:hover {
+  color: #1D4ED8;
+  border-bottom-color: #2563EB;
+  text-decoration: none;
+}
+
+/* Form input */
+.Box .form-control {
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid #E5E7EB;
+  border-radius: 12px;
+  padding: 16px 20px;
+  font-size: 16px;
+  font-family: "Inter", sans-serif;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 100%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  margin-bottom: 25px;
+}
+
+.Box .form-control:focus {
+  outline: none;
+  border-color: #2563EB;
+  background: #FFFFFF;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1),
+              0 8px 25px rgba(37, 99, 235, 0.15);
+  transform: translateY(-2px);
+}
+
+.Box .form-control::placeholder {
+  color: #9CA3AF;
+  font-weight: 500;
+}
+
+/* Submit button */
+.Button {
+  background: linear-gradient(135deg, #FACC15 0%, #F59E0B 100%);
+  border: none;
+  color: #1F2937;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 16px 32px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+  font-family: "Inter", sans-serif;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.Button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.6s;
+}
+
+.Button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(245, 158, 11, 0.5);
+  background: linear-gradient(135deg, #F59E0B 0%, #FACC15 100%);
+}
+
+.Button:hover::before {
+  left: 100%;
+}
+
+.Button:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .Box {
+    padding: 30px 25px;
+    margin: 10px;
+  }
+  
+  .Box p {
+    font-size: 15px;
+  }
+  
+  .Box .form-control {
+    padding: 14px 16px;
+    font-size: 16px; /* Prevent zoom on iOS */
+  }
+}
+
+@media (max-width: 480px) {
+  .Box {
+    padding: 25px 20px;
+    border-radius: 15px;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .Box {
+    background: rgba(31, 41, 55, 0.95);
+    border-color: rgba(55, 65, 81, 0.3);
+  }
+  
+  .Box p {
+    color: #F9FAFB;
+  }
+  
+  .Box .form-control {
+    background: rgba(17, 24, 39, 0.9);
+    border-color: #374151;
+    color: #F9FAFB;
+  }
+  
+  .Box .form-control:focus {
+    background: #1F2937;
+    border-color: #3B82F6;
+  }
+  
+  .Box .form-control::placeholder {
+    color: #6B7280;
+  }
+}

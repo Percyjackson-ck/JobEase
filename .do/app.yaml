@@ -1,0 +1,43 @@
+# DigitalOcean App Platform Configuration
+name: jobsy-app
+services:
+- name: backend
+  source_dir: /backend
+  github:
+    repo: Amarnathss/jobsy
+    branch: main
+  run_command: npm start
+  environment_slug: node-js
+  instance_count: 1
+  instance_size_slug: basic-xxs
+  envs:
+  - key: NODE_ENV
+    value: production
+  - key: PORT
+    value: "8080"
+  # Add your environment variables here:
+  # - key: MONGODB_URI
+  #   value: "your-mongodb-connection-string"
+  # - key: TWILIO_ACCOUNT_SID
+  #   value: "your-twilio-sid"
+  # - key: TWILIO_AUTH_TOKEN
+  #   value: "your-twilio-token"
+  # - key: admin_mail
+  #   value: "your-email@gmail.com"
+  # - key: admin_mail_pass
+  #   value: "your-email-password"
+
+- name: frontend
+  source_dir: /frontend
+  github:
+    repo: Amarnathss/jobsy
+    branch: main
+  build_command: npm install && npm run build
+  environment_slug: node-js
+  instance_count: 1
+  instance_size_slug: basic-xxs
+  routes:
+  - path: /
+  envs:
+  - key: REACT_APP_API_URL
+    value: ${backend.PUBLIC_URL}
