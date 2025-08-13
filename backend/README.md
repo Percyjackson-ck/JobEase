@@ -72,7 +72,7 @@
 1. **Clone the repository**
    ```bash
    git clone https://github.com/your-username/JobEase-backend.git
-   cd jobsy-backend
+   cd JobEase-backend
    ```
 
 2. **Install dependencies**
@@ -85,7 +85,7 @@
    Create a `.env` file in the root directory:
    ```env
    # Database
-   MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/jobsy
+   MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/JobEase
    
    # Twilio SMS Service
    TWILIO_ACCOUNT_SID=your_twilio_account_sid
@@ -125,7 +125,7 @@ Use [Postman](https://postman.com) or any API client to test endpoints:
 
 ## 📐 Architecture
 
-Jobsy Backend follows the **Manager-Service-Controller (MSC)** pattern for optimal code organization:
+JobEase Backend follows the **Manager-Service-Controller (MSC)** pattern for optimal code organization:
 
 ```
 🏗️ MSC Architecture

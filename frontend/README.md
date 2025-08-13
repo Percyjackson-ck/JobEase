@@ -1,17 +1,13 @@
 <div align="center">
 
-# 🎨 Jobsy Frontend
+# 🎨 JobEase Frontend
 
 **Modern React Application for Blue Collar Job Search Platform**
 
 [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
 [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://javascript.com/)
 [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://css3.com/)
-[![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/)
 
-![App Demo](https://media.giphy.com/media/A8pRmkexvl9jCdzS5D/giphy.gif)
-
-[🚀 Live Demo](https://jobsy-app.vercel.app) • [📖 Components](src/Components/) • [🔗 Backend API](../backend/) • [🎨 Style Guide](src/CSS/)
 
 </div>
 
@@ -76,15 +72,15 @@
 ### Prerequisites
 
 - Node.js 16+ and npm
-- Access to Jobsy Backend API
+- Access to JobEase Backend API
 - Modern web browser
 
 ### Installation
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/jobsy-frontend.git
-   cd jobsy-frontend
+   git clone https://github.com/your-username/jobease-frontend.git
+   cd jobease-frontend
    ```
 
 2. **Install dependencies**
@@ -436,6 +432,6 @@ npm run preview        # Preview production build
 
 **Crafted with ❤️ to empower blue-collar workers**
 
-[⬆ Back to Top](#-jobsy-frontend)
+[⬆ Back to Top](#-jobease-frontend)
 
 </div>
