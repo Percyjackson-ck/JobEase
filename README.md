@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🔧 Jobsy
+# 🔧 JobEase
 
 **A Modern Job Search Platform for Blue Collar Workers**
 
@@ -101,8 +101,8 @@ Creating an inclusive job search platform tailored specifically for blue-collar 
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/jobsy.git
-   cd jobsy
+   git clone https://github.com/your-username/jobease.git
+   cd jobease
    ```
 
 2. **Install dependencies**
@@ -139,7 +139,7 @@ Creating an inclusive job search platform tailored specifically for blue-collar 
 
 ## 📐 Architecture
 
-Jobsy follows the **Manager-Service-Controller (MSC)** pattern for clean separation of concerns:
+JobEase follows the **Manager-Service-Controller (MSC)** pattern for clean separation of concerns:
 
 ```
 📦 Architecture Layers
@@ -207,7 +207,7 @@ POST /user/register
 ## 🗂️ Project Structure
 
 ```
-jobsy/
+jobease/
 ├── 📁 backend/
 │   ├── 📁 controllers/     # Request handlers
 │   ├── 📁 services/        # Business logic
@@ -298,6 +298,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Built with ❤️ for the blue-collar workforce**
 
-[⬆ Back to Top](#-jobsy)
+[⬆ Back to Top](#-jobease)
 
 </div>
