@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🔧 Jobsy Backend API
+# 🔧 JobEase Backend API
 
 **RESTful API Server for Blue Collar Job Search Platform**
 
@@ -9,9 +9,7 @@
 [![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)](https://mongodb.com/)
 [![Twilio](https://img.shields.io/badge/Twilio-F22F46?style=for-the-badge&logo=twilio&logoColor=white)](https://twilio.com/)
 
-![API Demo](https://media.giphy.com/media/A8pRmkexvl9jCdzS5D/giphy.gif)
 
-[🚀 Live API](https://jobsy-api.render.com) • [📖 API Docs](docs/api.md) • [🔗 Frontend Repo](../frontend/) • [📋 Postman Collection](docs/postman-collection.json)
 
 </div>
 
@@ -73,7 +71,7 @@
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/jobsy-backend.git
+   git clone https://github.com/your-username/JobEase-backend.git
    cd jobsy-backend
    ```
 
